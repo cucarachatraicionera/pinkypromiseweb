@@ -3,7 +3,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import { useState } from "react";
-import SwapButton from "../components/SwapButton"; // Asegúrate de ajustar la ruta según tu estructura
+import SwapButton from "../components/SwapButton";
 
 export type FrameComponent1Type = {
   className?: string;
@@ -15,45 +15,44 @@ const FrameComponent1: NextPage<FrameComponent1Type> = ({ className = "" }) => {
 
   return (
     <section
-      className={`absolute top-[4282px] left-[92px] w-[1301px] h-[894px] flex flex-row items-start justify-start pt-0 px-0 pb-[172px] box-border max-w-full text-left text-base text-miscellaneous-floating-tab-pill-fill font-montserrat ${className}`}
+      className={`w-full flex flex-col items-center justify-start py-12 px-4 box-border max-w-full text-left text-base text-miscellaneous-floating-tab-pill-fill font-montserrat ${className}`}
     >
-      <div className="self-stretch w-[1224px] flex flex-row items-end justify-start gap-[71px] max-w-full mq1025:flex-wrap">
-        <div className="self-stretch flex-1 rounded-21xl flex flex-col items-start justify-start py-10 px-[39px] box-border gap-10 bg-[url('/swap-module@3x.png')] bg-cover bg-no-repeat bg-[top] max-w-full z-[2] mq450:min-w-full mq1025:min-h-[auto]">
-          <div className="self-stretch flex flex-col items-start justify-start relative gap-5">
+      <div className="w-full max-w-[1300px] flex flex-col md:flex-row items-start justify-start gap-10">
+        {/* Swap Card */}
+        <div className="flex-1 rounded-21xl flex flex-col items-start justify-start py-10 px-[39px] box-border gap-10 bg-[url('/swap-module@3x.png')] bg-cover bg-no-repeat bg-top z-[2]">
+          <div className="w-full flex flex-col items-start justify-start relative gap-5">
             {/* FROM */}
-            <div className="self-stretch rounded-xl bg-black flex flex-col items-start justify-start pt-5 px-1 pb-1 gap-5 z-[0]">
-              <div className="self-stretch flex flex-row items-start justify-start py-0 px-5">
-                <div className="relative leading-[16px] font-medium">from</div>
+            <div className="w-full rounded-xl bg-black flex flex-col items-start justify-start pt-5 px-1 pb-1 gap-5">
+              <div className="px-5">
+                <div className="leading-[16px] font-medium">from</div>
               </div>
-              <div className="self-stretch rounded-xl bg-dark-grey flex flex-row items-center justify-between p-xl gap-0 text-21xl mq450:flex-wrap">
+              <div className="w-full rounded-xl bg-dark-grey flex flex-row items-center justify-between p-4 text-4xl font-bold text-white">
                 <input
                   type="text"
                   value={fromAmount}
                   onChange={(e) => setFromAmount(e.target.value)}
-                  className="bg-transparent text-4xl font-bold outline-none text-white"
+                  className="bg-transparent outline-none w-full max-w-[70%]"
                 />
-                <button className="cursor-pointer border-deepskyblue border-solid border-[1px] py-0.5 px-[3px] bg-dark-grey rounded-25xl overflow-x-auto flex flex-row items-center justify-end">
+                <button className="border border-deepskyblue bg-dark-grey rounded-25xl flex flex-row items-center">
                   <Image src="/protocol-icon.svg" width={36} height={36} alt="SOL" />
-                  <div className="py-2.5 px-4">
-                    <span className="text-base text-deepskyblue font-montserrat">SOL</span>
-                  </div>
+                  <div className="py-2.5 px-4 text-base text-deepskyblue font-montserrat">SOL</div>
                 </button>
               </div>
             </div>
 
             {/* TO */}
-            <div className="self-stretch rounded-xl bg-black flex flex-col items-start justify-start pt-5 px-1 pb-1 gap-5 z-[1] font-overpass">
-              <div className="self-stretch flex flex-row items-start justify-start py-0 px-5">
-                <div className="relative leading-[16px] font-medium">to</div>
+            <div className="w-full rounded-xl bg-black flex flex-col items-start justify-start pt-5 px-1 pb-1 gap-5 font-overpass">
+              <div className="px-5">
+                <div className="leading-[16px] font-medium">to</div>
               </div>
-              <div className="self-stretch rounded-xl bg-dark-grey flex flex-row items-center justify-between p-xl gap-0 text-21xl font-montserrat mq750:flex-wrap">
+              <div className="w-full rounded-xl bg-dark-grey flex flex-row items-center justify-between p-4 text-4xl font-bold text-white">
                 <input
                   type="text"
                   value={toAmount}
                   onChange={(e) => setToAmount(e.target.value)}
-                  className="bg-transparent text-4xl font-bold outline-none text-white"
+                  className="bg-transparent outline-none w-full max-w-[70%]"
                 />
-                <button className="cursor-pointer border-deepskyblue border-solid border-[1px] py-0.5 px-[3px] bg-dark-grey rounded-25xl flex flex-row items-center justify-end">
+                <button className="border border-deepskyblue bg-dark-grey rounded-25xl flex flex-row items-center">
                   <Image
                     src="/chihuahua-1@2x.png"
                     alt="Pinky"
@@ -61,33 +60,31 @@ const FrameComponent1: NextPage<FrameComponent1Type> = ({ className = "" }) => {
                     height={38}
                     className="rounded-full"
                   />
-                  <div className="py-2.5 px-4">
-                    <span className="text-base text-deepskyblue font-montserrat">Pinky Promise</span>
-                  </div>
+                  <div className="py-2.5 px-4 text-base text-deepskyblue font-montserrat">Pinky Promise</div>
                 </button>
               </div>
             </div>
 
             {/* Swap Icon */}
-            <div className="absolute top-[calc(50%_-_22px)] left-[calc(50%_-_21.5px)] rounded-17xl bg-deepskyblue border-black border-solid border-[4px] flex flex-row items-start justify-start p-1.5 z-[2]">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-17xl bg-deepskyblue border-black border-4 flex items-center justify-center p-1.5 z-[2]">
               <Image src="/autorenew.svg" width={24} height={24} alt="swap" />
             </div>
           </div>
 
           {/* Info */}
-          <div className="self-stretch rounded-xl bg-black flex flex-col items-start justify-start p-xl gap-5">
-            <div className="flex flex-row items-center justify-start gap-2.5 text-xl mq750:flex-wrap">
-              <span className="font-bold text-white">{fromAmount}</span>
-              <span className="text-white/60">SOL</span>
+          <div className="w-full rounded-xl bg-black flex flex-col items-start justify-start p-4 gap-5 text-white">
+            <div className="flex flex-row items-center gap-2.5 text-xl">
+              <span className="font-bold">{fromAmount}</span>
+              <span className="opacity-60">SOL</span>
               <span>→</span>
-              <span className="font-bold text-white">{toAmount}</span>
-              <span className="text-white/60">PINKY PROMISE</span>
+              <span className="font-bold">{toAmount}</span>
+              <span className="opacity-60">PINKY PROMISE</span>
             </div>
-            <div className="flex justify-between w-full text-white/60">
+            <div className="flex justify-between w-full opacity-60">
               <span>Minimum Received</span>
               <span>10 PINKY PROMISE</span>
             </div>
-            <div className="flex justify-between w-full text-white/60">
+            <div className="flex justify-between w-full opacity-60">
               <span>Price Impact</span>
               <span>-</span>
             </div>
@@ -97,9 +94,9 @@ const FrameComponent1: NextPage<FrameComponent1Type> = ({ className = "" }) => {
           <SwapButton recipient="B281iQS8fnYczAyQR5U9j3hNyMYaiNbGkwM3z9AwG8Pk" amount={0.01} />
         </div>
 
-        {/* Lado derecho del swap (info visual, lotería, etc.) permanece igual */}
-        <div className="h-[606px] w-[570px] flex flex-col items-start justify-start max-w-full text-6xl mq750:min-w-full mq1025:flex-1">
-          {/* ... tu estructura actual aquí */}
+        {/* Right Side Info Placeholder */}
+        <div className="w-full md:w-[570px] h-[606px] flex flex-col items-start justify-start text-6xl">
+          {/* Aquí va el contenido visual, lotería, etc. */}
         </div>
       </div>
     </section>
