@@ -19,7 +19,6 @@ const Desktop: NextPage = () => {
       {/* CONTENIDO PRINCIPAL */}
       <Why />
       <Tokenomics />
-      <FrameComponent1 />
 
       {/* Imagen decorativa */}
       <div className="flex justify-center py-10">
@@ -33,7 +32,10 @@ const Desktop: NextPage = () => {
         />
       </div>
 
-      {/* Contenido de preventa y razones */}
+      {/* SWAP SECTION REUBICADA */}
+      <FrameComponent1 />
+
+      {/* Contenido adicional */}
       <section className="w-full flex flex-col items-center justify-start px-4 py-12 box-border">
         <div className="w-full max-w-[1373px] flex flex-col gap-20">
           <FrameComponent />
