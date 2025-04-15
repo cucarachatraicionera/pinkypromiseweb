@@ -3,8 +3,7 @@
 import { useWallet } from "@solana/wallet-adapter-react";
 import { sendSol } from "../utils/solanaUtils";
 import { useState } from "react";
-import { IoMdSwap } from "react-icons/io";
-
+import { HiArrowsRightLeft } from "react-icons/hi2"; // ← ✅ reemplazo sin error
 
 type SwapButtonProps = {
     recipient: string;
@@ -51,7 +50,7 @@ const SwapButton = ({ recipient, amount }: SwapButtonProps) => {
                 className="w-full flex justify-center items-center gap-2 bg-[#64cdff] text-black font-bold py-3 rounded-full hover:bg-[#4dbde6] transition duration-300 shadow-md"
             >
                 {isLoading ? "Enviando..." : "Swap"}
-                <IoMdSwap className="text-xl" />
+                <HiArrowsRightLeft className="text-xl" /> {/* ← Icono actualizado */}
             </button>
             {statusMessage && (
                 <p className="text-sm mt-2 text-white text-center">{statusMessage}</p>
