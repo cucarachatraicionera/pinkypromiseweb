@@ -10,7 +10,13 @@ import Footer from "../components/footer";
 const Desktop: NextPage = () => {
   return (
     <div className="w-full min-h-screen relative bg-gradient-to-b from-[#a2025c] via-[#1b8bad] to-[#363637] overflow-hidden opacity-[0.99] leading-normal tracking-normal text-left text-base text-miscellaneous-floating-tab-pill-fill font-montserrat">
-      {/* Secciones principales */}
+      {/* HEADER (Wallet connector) */}
+      {/* Aquí puedes incluir tu componente de Header si lo tienes */}
+
+      {/* NAVBAR (PresaleContent) */}
+      <PresaleContent />
+
+      {/* CONTENIDO PRINCIPAL */}
       <Why />
       <Tokenomics />
       <FrameComponent1 />
@@ -30,7 +36,6 @@ const Desktop: NextPage = () => {
       {/* Contenido de preventa y razones */}
       <section className="w-full flex flex-col items-center justify-start px-4 py-12 box-border">
         <div className="w-full max-w-[1373px] flex flex-col gap-20">
-          <PresaleContent />
           <FrameComponent />
         </div>
       </section>
