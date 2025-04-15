@@ -9,34 +9,46 @@ import Footer from "../components/footer";
 
 const Desktop: NextPage = () => {
   return (
-    <div className="w-full h-[7480px] relative [background:linear-gradient(180deg,_#a2025c_18.1%,_#1b8bad_49.1%,_#363637_99.6%)] overflow-hidden opacity-[0.99] leading-[normal] tracking-[normal] text-left text-base text-miscellaneous-floating-tab-pill-fill font-montserrat mq1125:h-auto mq1125:min-h-[7480]">
+    <div className="w-full min-h-screen relative bg-gradient-to-b from-[#a2025c] via-[#1b8bad] to-[#363637] overflow-hidden opacity-[0.99] leading-normal tracking-normal text-left text-base text-miscellaneous-floating-tab-pill-fill font-montserrat">
+      {/* Secciones principales */}
       <Why />
       <Tokenomics />
       <FrameComponent1 />
-      <Image
-        className="absolute top-[calc(50%_-_387px)] left-[829px] rounded-21xl w-[536px] h-[648px] object-cover"
-        loading="lazy"
-        width={536}
-        height={648}
-        alt=""
-        src="/swap-module1@2x.png"
-      />
-      <section className="absolute top-[1px] left-[20px] w-[1373px] flex flex-row items-start justify-end pt-0 pb-[189px] pl-0 pr-3 box-border max-w-full">
-        <div className="flex-1 flex flex-col items-start justify-start gap-20 max-w-full">
+
+      {/* Imagen decorativa */}
+      <div className="flex justify-center py-10">
+        <Image
+          className="rounded-3xl object-cover"
+          loading="lazy"
+          width={536}
+          height={648}
+          alt="swap module"
+          src="/swap-module1@2x.png"
+        />
+      </div>
+
+      {/* Contenido de preventa y razones */}
+      <section className="w-full flex flex-col items-center justify-start px-4 py-12 box-border">
+        <div className="w-full max-w-[1373px] flex flex-col gap-20">
           <PresaleContent />
           <FrameComponent />
         </div>
       </section>
-      <div className="absolute top-[268px] left-[688px] text-xl leading-[16px] inline-block w-[670px] mq450:text-base mq450:leading-[13px]">
-        <span className="font-medium">Actual Price:</span>
-        <b> $0,0</b>
+
+      {/* Info de precio y conversión */}
+      <div className="w-full flex flex-col items-center gap-4 text-white px-4">
+        <div className="text-xl font-medium">
+          <span className="opacity-80">Actual Price:</span>
+          <b> $0,0</b>
+        </div>
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-2">
+          <span className="font-medium">Pay with ETH</span>
+          <span className="font-medium">→</span>
+          <span className="font-medium">Receive $PINKYP</span>
+        </div>
       </div>
-      <div className="absolute top-[641px] left-[701px] leading-[16px] font-medium inline-block w-[670px]">
-        Pay with ETH
-      </div>
-      <div className="absolute top-[641px] left-[713px] leading-[16px] font-medium text-right">
-        Receive $PINKYP
-      </div>
+
+      {/* Footer */}
       <Footer />
     </div>
   );
